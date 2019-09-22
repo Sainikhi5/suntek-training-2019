@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int i,j,n,ind=0;,ele;
+	printf("enter no.of elements:");
+	scanf("%d",&n); 
+	int a[100];
+	for(i=0; i<n; i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	printf("Array elements are: ");
+	for(i=0; i<n; i++)
+	{
+		printf("%d ",a[i]);
+		printf("\n");
+	}
+	for(i=0; i<n; i++)
+	{
+		for(j=i+1; j<n; j++)
+		{
+			if(a[i]==a[j])
+			{
+				ele=a[j];
+				ind=j;
+				break;
+			}				
+		}
+		
+		if(ind !=0)
+			break;
+	}
+	if(ind!=0)
+		printf("the repeated element is %d\n",ele,);
+	else
+		printf("There is no repeated element\n");
+
+	return 0;
+}

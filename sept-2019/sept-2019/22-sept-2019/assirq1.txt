@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	int a=0,b,c,i;
+	printf("enter input:");
+	scanf("%d",&b);
+	for(i=0;i<=100;i++)
+	{	
+		c=a+b;
+		printf("%d\t",c);
+		a=b;
+		b=c;
+	}
+	return 0;
+}

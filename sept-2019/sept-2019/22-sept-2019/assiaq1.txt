@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void maxsubarray(int a[], int n)
+{
+	int i,sum=0,res= 0,start=0,end=0,t=0;
+	for (i = 0; i < n; i++)
+	{		
+		sum= sum+ a[i];		
+		if (sum < 0)
+		{
+			sum = 0;	
+			beg = i + 1;
+		}
+
+		
+		if (res<sum)
+		{
+			res=sum;
+			start=t;
+			end=i;
+		}
+	}
+
+	printf("The sum of subarray with the largest sum is %d",
+			res);
+
+	printf("\n The maxsubarray ");
+	for (i=start; i<=end; i++)
+		printf("%d ",a[i]);
+}
+
+int main()
+{
+	int a[],n;
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{	
+		scanf("%d",&a[i]);
+	}
+	
+	maxsubarray(a, n);
+
+	return 0;
+}
