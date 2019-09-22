@@ -1,0 +1,52 @@
+3)Iterative method:
+
+#include<stdio.h> 
+int main()
+{
+	unsigned int fact(unsigned int n);
+  	int num;
+	printf("enter number");
+	scanf("%d",&num);
+  	printf("Fact of %d is %d", num, fact(num));
+  	return 0;
+}
+unsigned int fact(unsigned int n)
+{
+  int res = 1, i;
+  for (i = 2; i<= n; i++)
+  res *= i;
+  return res;
+}
+
+
+
+2) Recursion with O(2^n) complexity
+
+#include<stdio.h>; 
+long factorial(int);
+ 
+int main()
+{
+  int n;
+  long f;
+   printf("Enter an integer to find its factorial\n");
+  scanf("%d",&n);
+ 
+  if (n<0)
+    printf("Factorial of negative integers isnt defined\n");
+  else
+  {
+    f = factorial(n);
+    printf("%d!= %ld\n", n, f);
+  }
+ 
+  return 0;
+}
+ 
+long factorial(int n)
+{
+  if (n == 0)
+    return 1;
+  else
+    return(n * factorial(n-1));
+}
